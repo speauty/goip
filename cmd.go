@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 func main() {
 	res, err := new(GIPSrv).GetPublicIpByHttp()
 	if err != nil {
-		fmt.Println("查询异常, 错误:", err)
-		return
+		log.Fatal(err)
 	}
 	fmt.Println(res)
 	return
